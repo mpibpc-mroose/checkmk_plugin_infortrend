@@ -1,0 +1,31 @@
+[flake8]
+ignore =    DAR101,
+            # ignore DAR as we use typing
+            DAR201,
+            DAR301,
+            # be checkmk definition we have to use "wrong variable names" as "item"
+            WPS110,
+            # false positive for upper-case constants in classes, used in enums
+            WPS115,
+            # allow f-strings as they are cool
+            WPS237,
+            WPS305,
+            # allow % string formatting for definitions of check and snmp sections
+            WPS323,
+            # we have a lot of magical numbers for SNMP states
+            WPS432,
+max_line_length = 120
+exclude =
+    .git,
+    .idea,
+    .venv,
+    __pycache__,
+per-file-ignores =
+  agent_based/__init__.py: D104
+  agent_based/core.py:
+  agent_based/infortrend_chassis_a.py: WPS226,WPS235,WPS210,WPS231
+  agent_based/infortrend_chassis_b.py: WPS226,WPS232,WPS235,WPS210,WPS220,WPS231
+  agent_based/infortrend_disks_a.py: WPS235
+  agent_based/infortrend_disks_b.py: WPS235
+  agent_based/infortrend_logical_drives_a.py: WPS231,WPS235
+  agent_based/infortrend_logical_drives_b.py: WPS231,WPS235

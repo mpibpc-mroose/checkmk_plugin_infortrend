@@ -1,0 +1,6 @@
+cmk_agent_based
+cmk_mkp_tool
+cmk_rulesets
+
+isort
+wemake-python-styleguide
